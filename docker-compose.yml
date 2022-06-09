@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  api:
+    container_name: cam_api
+    build: .
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - "8080:80"
+    restart: always
+
+  mysql:
+    container_name: cam_mysql
+    restart: always
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pwd
+      MYSQL_DATABASE: sample_db
+      MYSQL_USER: api
+      MYSQL_PASS: api_pwd
+    volumes:
+      - mybd-volume:/var/lib/mysql
+
+volumes:
+  mybd-volume:

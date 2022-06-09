@@ -1,0 +1,6 @@
+{
+    "MYSQL_HOST": "mysql",
+    "MYSQL_DATABASE": "cam4park",
+    "MYSQL_USER": "root",
+    "MYSQL_PASSWORD": "root_pwd"
+}
